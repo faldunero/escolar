@@ -30,7 +30,7 @@ const router = {
     if (detalleView) detalleView.style.display = 'flex';
 
     if (naipeImg) {
-      const rutaImg = tarjeta.img.startsWith('/') ? tarjeta.img : `/${tarjeta.img}`;
+      const rutaImg = tarjeta.img.startsWith('./') ? tarjeta.img : `./${tarjeta.img.replace(/^\/+/, '')}`;
       naipeImg.src = encodeURI(rutaImg);
       naipeImg.alt = tarjeta.es || tarjeta.id || 'Tarjeta';
     }
@@ -123,7 +123,7 @@ function reproducirVoz(idioma) {
 
 async function cargarDatos() {
   try {
-    const respuesta = await fetch('/data/tarjetas.json');
+    const respuesta = await fetch('./data/tarjetas.json');
     if (!respuesta.ok) throw new Error(`Error HTTP ${respuesta.status}`);
 
     catalogoCompleto = await respuesta.json();
@@ -145,7 +145,7 @@ function renderizarTablero() {
       div.className = 'item-lupa';
 
       const img = document.createElement('img');
-      const rutaImg = tarjeta.img.startsWith('/') ? tarjeta.img : `/${tarjeta.img}`;
+      const rutaImg = tarjeta.img.startsWith('./') ? tarjeta.img : `./${tarjeta.img.replace(/^\/+/, '')}`;
       img.src = encodeURI(rutaImg);
       img.alt = tarjeta.es || tarjeta.id || 'Tarjeta';
       img.loading = 'lazy';
