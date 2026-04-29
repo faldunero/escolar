@@ -2,6 +2,11 @@ let catalogoCompleto = {};
 let cartaActual = null;
 let vocesDisponibles = [];
 
+const normalizarRuta = (ruta) => {
+  if (!ruta) return '';
+  return `./${String(ruta).replace(/^\/+/, '')}`;
+};
+
 const router = {
   home: () => {
     const catalogoView = document.getElementById('catalogo-view');
@@ -30,8 +35,7 @@ const router = {
     if (detalleView) detalleView.style.display = 'flex';
 
     if (naipeImg) {
-      const rutaImg = tarjeta.img.startsWith('./') ? tarjeta.img : `./${tarjeta.img.replace(/^\/+/, '')}`;
-      naipeImg.src = encodeURI(rutaImg);
+      naipeImg.src = encodeURI(normalizarRuta(tarjeta.img));
       naipeImg.alt = tarjeta.es || tarjeta.id || 'Tarjeta';
     }
 
@@ -145,8 +149,7 @@ function renderizarTablero() {
       div.className = 'item-lupa';
 
       const img = document.createElement('img');
-      const rutaImg = tarjeta.img.startsWith('./') ? tarjeta.img : `./${tarjeta.img.replace(/^\/+/, '')}`;
-      img.src = encodeURI(rutaImg);
+      img.src = encodeURI(normalizarRuta(tarjeta.img));
       img.alt = tarjeta.es || tarjeta.id || 'Tarjeta';
       img.loading = 'lazy';
 

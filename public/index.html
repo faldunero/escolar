@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ludolab.cl</title>
+  <title>Escolar | Ludo Lab</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css?v=10">
+  <link rel="stylesheet" href="./css/style.css?v=11">
 </head>
 <body>
 
@@ -14,6 +14,12 @@
       <img src="./imagenes/banner_horizontal.png" alt="Ludolab">
     </div>
   </header>
+
+  <nav class="volver-juegos">
+    <a href="https://ludolab.cl/juegos/" class="btn-volver-juegos">
+      ← Volver a juegos
+    </a>
+  </nav>
 
   <main id="app">
     <section id="catalogo-view">
@@ -36,7 +42,7 @@
     <section id="detalle-view" style="display: none;">
       <div class="naipe-container">
         <button type="button" onclick="router.home()" class="btn-volver">
-          ← VOLVER AL CATÁLOGO
+          ← Volver al catálogo
         </button>
 
         <div class="naipe-card">
@@ -44,10 +50,10 @@
 
           <div class="controles-audio">
             <button type="button" onclick="reproducirVoz('es')" class="btn-audio">
-              ESPAÑOL
+              Español
             </button>
             <button type="button" onclick="reproducirVoz('en')" class="btn-audio">
-              ENGLISH
+              English
             </button>
           </div>
         </div>
@@ -56,12 +62,23 @@
   </main>
 
   <footer class="creditos">
-    <p class="creditos-tagline">Donde la curiosidad se convierte en conocimiento</p>
-    <a href="https://ludolab.cl" target="_blank" rel="noopener noreferrer" class="creditos-logo">
-      <img src="./imagenes/logotipo.png" alt="Ludolab.cl">
-    </a>
+    <div class="creditos-inner">
+      <p class="creditos-eyebrow">Nuestra filosofía</p>
+      <h2 class="creditos-titulo">Donde la curiosidad se convierte en conocimiento</h2>
+      <p class="creditos-texto">
+        En Ludo Lab diseñamos experiencias lúdicas que respetan la inteligencia de quien juega.
+        Cada carta, cada pregunta y cada ilustración pasa por un proceso de investigación,
+        validación y diseño para que aprender se sienta como una aventura, no como una tarea.
+      </p>
+
+      <a href="https://ludolab.cl/index.html" target="_blank" rel="noopener noreferrer" class="creditos-logo">
+        <img src="./imagenes/logotipo.png" alt="Ludo Lab">
+      </a>
+
+      <p class="creditos-copy">© 2026 Ludo Lab Chile. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <script src="./js/app.js?v=10" defer></script>
+  <script src="./js/app.js?v=11" defer></script>
 </body>
 </html>
