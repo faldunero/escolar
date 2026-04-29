@@ -1,0 +1,254 @@
+:root {
+  --azul: #0052d4;
+  --cian: #43c6ac;
+  --slate-100: #f8fafc;
+  --slate-200: #e2e8f0;
+  --slate-400: #94a3b8;
+  --texto: #334155;
+  --sombra: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --radio: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--texto);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+}
+
+#app {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  flex: 1;
+}
+
+.ludolab-header {
+  width: 100%;
+  padding: 24px 0 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-wrapper {
+  width: min(460px, 46vw);
+  min-width: 280px;
+}
+
+.banner-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+#catalogo-view {
+  padding: 24px 0 48px;
+}
+
+.categoria-seccion {
+  margin-bottom: 48px;
+}
+
+.titulo-categoria {
+  margin-bottom: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #44c7bf;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grid-lupa {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 24px;
+}
+
+.item-lupa {
+  background: #fff;
+  border: 1px solid #edf2f7;
+  border-radius: 22px;
+  box-shadow: var(--sombra);
+  padding: 18px;
+  min-height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.item-lupa:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+}
+
+.item-lupa img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.22s ease;
+}
+
+.item-lupa:hover img {
+  transform: scale(1.18);
+}
+
+#detalle-view {
+  display: none;
+  min-height: 70vh;
+  padding: 20px 0 48px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.naipe-container {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.btn-volver {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.naipe-card {
+  width: 100%;
+  min-height: 520px;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: var(--sombra);
+  padding: 26px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#naipe-img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 320px;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+}
+
+.controles-audio {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn-audio {
+  flex: 1;
+  max-width: 150px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--azul), #2563eb);
+  color: #fff;
+  font-weight: 700;
+  padding: 14px 18px;
+  cursor: pointer;
+}
+
+.creditos {
+  padding: 26px 16px 20px;
+  text-align: center;
+  border-top: 1px solid #f1f5f9;
+}
+
+.creditos-tagline {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.creditos-logo img {
+  width: 120px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .banner-wrapper {
+    width: min(340px, 75vw);
+    min-width: unset;
+  }
+
+  .titulo-categoria {
+    font-size: 1.6rem;
+  }
+
+  .grid-lupa {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .item-lupa {
+    min-height: 170px;
+    padding: 12px;
+  }
+
+  .item-lupa img {
+    width: 118px;
+    height: 118px;
+  }
+
+  .item-lupa:hover img {
+    transform: scale(1.12);
+  }
+
+  .naipe-card {
+    min-height: 470px;
+    padding: 22px 18px 24px;
+  }
+
+  #naipe-img {
+    max-width: 220px;
+    max-height: 240px;
+  }
+
+  .controles-audio {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-audio {
+    max-width: none;
+    width: 100%;
+  }
+}
