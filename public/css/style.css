@@ -310,13 +310,4 @@ button {
     max-width: none;
     width: 100%;
   }
-
-  .creditos {
-    padding: 44px 16px 32px;
-  }
-
-  .creditos-texto {
-    font-size: 0.96rem;
-    line-height: 1.7;
-  }
 }
